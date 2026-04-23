@@ -58,7 +58,7 @@ return sendMessage(chatId, text, replyMarkup);
 }
 
 function getUpdates() {
-var url = “https://api.telegram.org/bot” + BOT_TOKEN + “/getUpdates?timeout=10&offset=” + offset + “&allowed_updates=["message","callback_query"]”;
+var url = “https://api.telegram.org/bot” + BOT_TOKEN + “/getUpdates?timeout=10&offset=” + offset + “&allowed_updates=%5B%22message%22%2C%22callback_query%22%5D”;
 return fetchJSON(url);
 }
 
