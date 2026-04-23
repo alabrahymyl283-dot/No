@@ -1,16 +1,14 @@
 name: Telegram Bot Runner
 
 on:
-  # تشغيل يدوي من واجهة GitHub
   workflow_dispatch:
-  # أو جدولة كل 6 ساعات (حتى لا يتجاوز الحد الأقصى)
   schedule:
     - cron: '0 */6 * * *'
 
 jobs:
   run-bot:
     runs-on: ubuntu-latest
-    timeout-minutes: 360  # 6 ساعات كحد أقصى
+    timeout-minutes: 360
     
     steps:
       - name: Checkout code
@@ -20,6 +18,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+      
+      - name: Remove BOM from index.js
+        run: sed -i 's/^\xEF\xBB\xBF//' index.js
       
       - name: Install dependencies
         run: npm install
