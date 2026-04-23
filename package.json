@@ -1,0 +1,12 @@
+{
+  "name": "no-im-not-a-human-bot",
+  "version": "1.0.0",
+  "description": "Telegram bot for game characters",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": ["telegram", "game", "bot"],
+  "author": "",
+  "license": "MIT"
+}
